@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 
     if ($result) {
         $_SESSION['user'] = $result[0];
-        var_dump($_SESSION['user']);
+        header('Location: home.php');
     } else {
         $error = 'Login failed / wrong email or password';
     }
@@ -35,8 +35,8 @@ if (isset($_POST['login'])) {
     </div>
 
     <form id="form" class="d-flex flex-column gap-2" action="./login.php" method="post">
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="password" placeholder="Password">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
         <p class="text-danger"><?= $error; ?></p>
         <button type="submit" name="login">Login</button>
     </form>
