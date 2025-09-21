@@ -10,7 +10,7 @@ if (isset($_POST['register'])) {
     $result = query($query);
 
     if ($result) {
-        echo 'User registered successfully';
+        header('Location: login.php');
     } else {
         echo 'User registration failed';
     }
@@ -27,19 +27,21 @@ if (isset($_POST['register'])) {
     <title>Santaify</title>
 </head>
 <body>
-    <header>
-        
-    </header>
+    <div class="container">
+        <div class="text-center">
+            <img class="login_logo mt-5 mb-3" src="./images/logo.png" alt="Santaify">
+        </div>
 
-    <div class="container text-center">
-        <img class="login_logo mt-5 mb-3" src="./images/logo.png" alt="Santaify">
-
-        <form id="signup-form" class="d-flex flex-column gap-2" action="" method="post">
-            <input type="email" name="email" placeholder="Email">
-            <input type="name" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
+        <form id="form" class="d-flex flex-column gap-2" action="./index.php" method="post">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="name" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
             <button type="submit" name="register">Register</button>
         </form>
+
+        <div class="form-section">
+            <a class="text-decoration-none border" href="login.php">Login</a>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

@@ -7,16 +7,16 @@ body {
   padding: 0;
 }
 
-#signup-form input,
-#signup-form button {
+#form input,
+#form button {
   border: 1px solid lightgray;
   border-radius: 1rem;
   color: black;
   padding: 16px;
 }
 
-#signup-form button,
-#signup-form input::placeholder {
+#form button,
+#form input::placeholder {
   color: grey;
 }
 
@@ -42,4 +42,17 @@ nav {
 
 .login_logo {
   height: 10rem;
+}
+
+.form-section {
+  margin-top: 10rem;
+}
+
+.form-section a {
+  color: black;
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+  color: gray;
+  padding: 1rem 2rem;
+  background-color: rgb(244, 244, 244);
 }
